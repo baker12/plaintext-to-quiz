@@ -140,7 +140,7 @@ function newMultiSelect(lineBlock) {
 	var multiSelect = new Object();
 	//Set default settings
 	multiSelect.NewQuestion = 'MS';
-	multiSelect.Title = '';
+	//multiSelect.Title = '';
 	multiSelect.QuestionText = '"' + htmlEntities(lineBlock[0]) + '"';
 	var startIndex = 1;
 	if(lineBlock[1].toLowerCase().search("points") != -1) {
@@ -188,13 +188,14 @@ function newMultipleChoice(lineBlock) {
 	var multipleChoice = new Object();
 	//Set default settings
 	multipleChoice.NewQuestion = 'MC';
-	multipleChoice.Title = '';
+	//multipleChoice.Title = '';
 	multipleChoice.QuestionText = '"' + htmlEntities(lineBlock[0]) + '"';
 	var startIndex = 1;
 	if(lineBlock[1].toLowerCase().search("points") != -1) {
 		//Point value given
 		var val = lineBlock[1].split(' ')
-		multipleChoice.Points = htmlEntities(val[1]);
+		//multipleChoice.Points = htmlEntities(val[1]);
+		multipleChoice.Points = val[1];
 		startIndex = 2;
 	} else {
 		//Use default
@@ -220,11 +221,11 @@ function newMultipleChoice(lineBlock) {
 			if (keys[i] == "Options") {
 				for (var j = 0; this[keys[i]].length > j; j++) {
 					result += this[keys[i]][j].join();
-					result += '\n';
+					result += ',\n';
 				}
 			} else {
 				result += keys[i] + ',' + this[keys[i]];
-				result += '\n';
+				result += ',\n';
 			}
 		}
 		return result;
@@ -236,7 +237,7 @@ function newTrueFalse(lineBlock) {
 	var trueFalse = new Object();
 	//Assign default variables
 	trueFalse.NewQuestion = 'TF';
-	trueFalse.Title = '';
+	//trueFalse.Title = '';
 	trueFalse.QuestionText = '"' + htmlEntities(lineBlock[0]) + '"';
 	var startIndex = 1;
 	if(lineBlock[1].toLowerCase().search("points") != -1) {
@@ -279,7 +280,7 @@ function newMatching(lineBlock) {
 	var matching = new Object();
 	//Set default settings
 	matching.NewQuestion = 'M';
-	matching.Title = '';
+	//matching.Title = '';
 	matching.QuestionText = '"' + htmlEntities(lineBlock[0]) + '"';
 	var startIndex = 1;
 	if(lineBlock[1].toLowerCase().search("points") != -1) {
@@ -324,7 +325,7 @@ function newOrder(lineBlock) {
 	var order = new Object();
 	//Set default settings
 	order.NewQuestion = 'O';
-	order.Title = '';
+	//order.Title = '';
 	order.QuestionText = '"' + htmlEntities(lineBlock[0]) + '"';
 	var startIndex = 1;
 	if(lineBlock[1].toLowerCase().search("points") != -1) {
@@ -367,7 +368,7 @@ function newShortAnswer(lineBlock) {
 	var shortanswer = new Object();
 	//Set default settings
 	shortanswer.NewQuestion = 'SA';
-	shortanswer.Title = '';
+	//shortanswer.Title = '';
 	shortanswer.QuestionText = '"' + htmlEntities(lineBlock[0]) + '"';
 	var startIndex = 1;
 	if(lineBlock[1].toLowerCase().search("points") != -1) {
@@ -410,7 +411,7 @@ function newWrittenResponse(lineBlock) {
 	var writtenresponse = new Object();
 	//Set default settings
 	writtenresponse.NewQuestion = 'WR';
-	writtenresponse.Title = '';
+	//writtenresponse.Title = '';
 	writtenresponse.QuestionText = '"' + htmlEntities(lineBlock[0]) + '"';
 	var startIndex = 1;
 	if(lineBlock.length === 2) {
@@ -567,6 +568,12 @@ function CopyToClipboard() {
 }
 
 //https://stackoverflow.com/questions/14129953/how-to-encode-a-string-in-javascript-for-displaying-in-html
+//https://stackoverflow.com/questions/9401312/how-to-replace-curly-quotation-marks-in-a-string-using-javascript
+/*
 function htmlEntities(str) {
 	return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/[\u2018\u2019]/g, '&apos;').replace(/[\u201C,\u201D]/g, '&quot');
+} */
+
+function htmlEntities(str) {
+	return String(str).replace(/\"/g,'\"\"').replace(/\u2018/g, '\'').replace(/\u2019/g, '\'').replace(/\u201C/g, '\"\"').replace(/\u201D/g, '\"\"');
 }
