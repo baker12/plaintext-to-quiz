@@ -1,0 +1,70 @@
+1. This is a test multiple choice question
+a) Answer 1
+b) *Answer 2
+c) Answer 3
+
+2. This is another test multiple choice question, but with points!
+Points 5
+a) *Answer 1
+b) Answer 2
+c) Answer 3
+
+3. This is a true or false question
+a) *True
+b) False
+
+4. This is a valued true or false question
+Points 4
+a) True
+b) *False
+
+5. Select the correct answers for this multi-select test question
+a) Answer 1
+b) *Answer 2
+c) Answer 3
+d) *Answer 4
+
+6. Select all that apply to this multi-select test question with points
+Points 6
+a) *Answer 1
+b) *Answer 2
+c) Answer 3
+d) Answer 4
+7. Write out what you think about this test written response question
+
+8. Explain why this is a test written response question with points
+Points 3
+
+9. Now tell me what type of question this short answer test question is
+Acceptable answer 1
+Acceptable answer 2
+Accepta	ble answer 3
+
+10. This is now a fill in the blank/short answer but with ____!
+Points 2
+Acceptable Answer 1
+Acceptable Answer 2
+Acceptable Answer 3
+
+11. Match the test question to the question type
+Answer 1/Answer 1 Pair
+Answer 2/Answer 2 Pair
+Answer 3/Answer 3 Pair
+
+12. Match the test question with the points
+Points 10
+Answer 1/Answer 1 Pair
+Answer 2/Answer 2 Pair
+Answer 3/Answer 3 Pair
+
+13. Order the correct terms for this ordering question
+Answer 1
+Answer 2
+Answer 3
+
+14. Order the correct terms in reverse so we can test points
+Points 8
+Answer 4
+Answer 3
+Answer 2
+Answer 1
